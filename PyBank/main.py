@@ -23,7 +23,7 @@ currentmonthamount = 0
 lastmonthamont = None
 
 # First we open the file
-with open(bankpath, newline='') as bankfile:
+with open(bankpath) as bankfile:
     # This is converting the file from a csv into a dicitonary. I personally like dictionaries more than lists.
     bankreader = csv.DictReader(bankfile)
     for row in bankreader:
@@ -68,10 +68,10 @@ print(f'Greatest Decrease in profits: {monthlylist[minmonth]} {min(monthlychange
 resultspath = os.path.join("Analysis", "bankresults.txt")
 
 with open(resultspath, 'w') as results:
-    results.write("Financial Analysis")
-    results.write("------------------")
-    results.write(f"Total Months: {monthtotal}")
-    results.write(f"Total Profits/Losses: {totalprofit}")
-    results.write(f"Average Change: {round(statistics.mean(monthlychange), 2)}")
-    results.write(f'Greatest Increase in profits: {monthlylist[maxmonth]} {max(monthlychange)}')
+    results.write("Financial Analysis\n")
+    results.write("------------------\n")
+    results.write(f"Total Months: {monthtotal}\n")
+    results.write(f"Total Profits/Losses: {totalprofit}\n")
+    results.write(f"Average Change: {round(statistics.mean(monthlychange), 2)}\n")
+    results.write(f'Greatest Increase in profits: {monthlylist[maxmonth]} {max(monthlychange)}\n')
     results.write(f'Greatest Decrease in profits: {monthlylist[minmonth]} {min(monthlychange)}')
