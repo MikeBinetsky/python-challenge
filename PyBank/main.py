@@ -47,23 +47,24 @@ print(f'Total Profits = {totalprofit}')
 print(f' Average Monthly Change = {round(statistics.mean(monthlychange), 2)}')
 
 # Okay this one is a bit weird. 
-
 # First I set up two new variables: maxmonth and minmonth and set them both to None or Null
 maxmonth = None
 minmonth = None
+maxchange = max(monthlychange)
+minchange = min(monthlychange)
 # Let's start a loop to go through each item in monthlychange --> The list we added the changes from month to month
 for month in monthlychange:
     # for each entry in my monthlychange list I check to see if it's the highest value in the entire list. 
-    if month == max(monthlychange):
+    if month == maxchange:
         # If it is, I grab the index of that value
         maxmonth = monthlychange.index(month)
     # for each entry in my monthlychange list I check to see if it's the highest value in the entire list. 
-    if month == min(monthlychange):
+    if month == minchange:
         # If it is, I grab the index of that value
         minmonth = monthlychange.index(month)
 
-print(f'Greatest Increase in profits: {monthlylist[maxmonth]} {max(monthlychange)}')
-print(f'Greatest Decrease in profits: {monthlylist[minmonth]} {min(monthlychange)}')
+print(f'Greatest Increase in profits: {monthlylist[maxmonth]} {maxchange}')
+print(f'Greatest Decrease in profits: {monthlylist[minmonth]} {minchange}')
 
 resultspath = os.path.join("Analysis", "bankresults.txt")
 
