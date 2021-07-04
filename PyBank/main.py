@@ -7,9 +7,6 @@ import statistics
 # using the os.path.join to make the relative path of the budget_data.csv file. This should be able to be used universally regardless of system
 bankpath = os.path.join("Resources", "budget_data.csv")
 
-# Setting the month total to zero since this can be increased by 1 in the for loop later
-monthtotal = 0
-
 # Same thing here. This will be increased in the loop to print later
 totalprofit = 0
 
@@ -30,7 +27,6 @@ with open(bankpath) as bankfile:
         # First, we set the current month's profit and losses into the currentmonthamount to be used later
         currentmonthamount = int(row['Profit/Losses'])
         # Then we iterate the monthly total by one to return later
-        monthtotal += 1
         # The total profit starts at 0 and is added to this total profit to be returned later
         totalprofit += currentmonthamount
         # This if does a check to see if the last month amount is empty.
@@ -41,6 +37,9 @@ with open(bankpath) as bankfile:
             # If the last month's profit/losses is empty, this gets skipped since there can be no change if there has been no change. Ya'know?
         #Finally, set the last month's amount to the current month's amount to be used in the next iteration of row
         lastmonthamont = currentmonthamount
+
+# The monthly list is the number of months there was change. Since the only month without change was the first we take the length of the month list and add 1.
+monthtotal = len(monthlylist) + 1
 
 print(f'Total Months = {monthtotal}')
 print(f'Total Profits = {totalprofit}')
@@ -66,9 +65,12 @@ for month in monthlychange:
 print(f'Greatest Increase in profits: {monthlylist[maxmonth]} {maxchange}')
 print(f'Greatest Decrease in profits: {monthlylist[minmonth]} {minchange}')
 
+# This is defining the outputh path for the new .txt file
 resultspath = os.path.join("Analysis", "bankresults.txt")
 
+# I open the output file with 'w' defined so as to write to the file rather than read it
 with open(resultspath, 'w') as results:
+    # Here I write the output that I have pritned above. The /n at the end of the lines creates a new line in the text file
     results.write("Financial Analysis\n")
     results.write("------------------\n")
     results.write(f"Total Months: {monthtotal}\n")
