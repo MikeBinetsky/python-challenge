@@ -1,4 +1,4 @@
-# Python Homework - Py Me Up, Charlie
+``# Python Homework - Py Me Up, Charlie
 
 ## Background
 
@@ -14,9 +14,9 @@ Both of these challenges encompass a real-world situation where your newfound Py
 
 * [DONE] Clone the new repository to your computer.
 
-* Inside your local git repository, create a directory for each Python Challenge. Use folder names corresponding to the challenges: **PyBank** and  **PyPoll**.
-
-* Inside of each folder that you just created, add the following:
+* [DONE] Inside your local git repository, create a directory for each Python Challenge. Use folder names corresponding to the challenges: **PyBank** and  **PyPoll**.
+https://discord.com/channels/410506033803296769/505040893103833088
+* [DONE] Inside of each folder that you just created, add the following:
 
   * [DONE] A new file called `main.py`. This will be the main script to run for each analysis.
   * [DONE] A "Resources" folder that contains the CSV files you used. Make sure your script has the correct path to the CSV file.
@@ -54,7 +54,7 @@ Both of these challenges encompass a real-world situation where your newfound Py
   Greatest Decrease in Profits: Sep-2013 ($-2196167)
   ```
 
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+* [DONE] In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
 ## PyPoll
 
@@ -64,15 +64,15 @@ Both of these challenges encompass a real-world situation where your newfound Py
 
 * You will be give a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. Your task is to create a Python script that analyzes the votes and calculates each of the following:
 
-  * The total number of votes cast
+  * [DONE] The total number of votes cast
 
-  * A complete list of candidates who received votes
+  * [DONE] A complete list of candidates who received votes
 
-  * The percentage of votes each candidate won
+  * [DONE] The percentage of votes each candidate won
 
-  * The total number of votes each candidate won
+  * [DONE] The total number of votes each candidate won
 
-  * The winner of the election based on popular vote.
+  * [DONE] The winner of the election based on popular vote.
 
 * As an example, your analysis should look similar to the one below:
 
